@@ -1,0 +1,68 @@
+2020-10-14 17:39:25,468 INFO  [Log] 	Create new random name 
+2020-10-14 17:39:25,656 INFO  [Log] 	Create new random name 
+2020-10-14 17:39:25,656 INFO  [Log] 	Create new random name 
+2020-10-14 17:39:25,656 INFO  [Log] 	Create new random email 
+2020-10-14 17:39:26,062 INFO  [Log] -----------------------Start browser------------------------
+ 
+2020-10-14 17:39:26,984 INFO  [WebDriverManager] Using chromedriver 86.0.4240.22 (resolved driver for Chrome 86) 
+2020-10-14 17:39:27,015 INFO  [WebDriverManager] Exporting webdriver.chrome.driver as C:\Users\SATTDN20.02.03\.cache\selenium\chromedriver\win32\86.0.4240.22\chromedriver.exe 
+2020-10-14 17:39:33,307 INFO  [Log] [STEP 1] 
+2020-10-14 17:39:33,307 INFO  [Log] Navigate to url: http://13.82.211.128:8080/administrator 
+2020-10-14 17:39:36,547 INFO  [Log] [STEP 2 - 3] 
+2020-10-14 17:39:36,604 INFO  [Log] 		Enter data for the username field: huy 
+2020-10-14 17:39:36,891 INFO  [Log] 		Enter data for the passwd field: huy123 
+2020-10-14 17:39:37,142 INFO  [Log] 		Click on Log in login 
+2020-10-14 17:39:38,773 INFO  [Log] [STEP 4] 
+2020-10-14 17:39:38,829 INFO  [Log] 		Click on Components clickTab 
+2020-10-14 17:39:39,067 INFO  [Log] 		Click on Banners clickTab 
+2020-10-14 17:39:40,695 INFO  [Log] 		Click on Clients clickTab 
+2020-10-14 17:39:41,648 INFO  [Log] [STEP 5] 
+2020-10-14 17:39:41,712 INFO  [Log] 		Click on New clickNewBtn 
+2020-10-14 17:39:42,955 INFO  [Log] [STEP 6 - 9] 
+2020-10-14 17:39:42,991 INFO  [Log] 		Enter data for the jform[name] field: 1+Brock Lee 
+2020-10-14 17:39:43,170 INFO  [Log] 		Enter data for the jform[contact] field: 1+Brock Lee 
+2020-10-14 17:39:43,323 INFO  [Log] 		Enter data for the jform[email] field: 1+steven.larson@hotmail.com 
+2020-10-14 17:39:43,580 INFO  [Log] 		Click on Published createNewBannersClients 
+2020-10-14 17:39:43,787 INFO  [Log] 		Click on Published createNewBannersClients 
+2020-10-14 17:39:43,957 INFO  [Log] 		Click on Save & Close createNewBannersClients 
+2020-10-14 17:39:45,116 INFO  [Log] [STEP 10]
+A message : 'Client successfully saved' shows and new client is created 
+2020-10-14 17:39:45,283 INFO  [Log] [STEP 11] 
+2020-10-14 17:39:45,336 INFO  [Log] 		Click on Components clickTab 
+2020-10-14 17:39:45,530 INFO  [Log] 		Click on Banners clickTab 
+2020-10-14 17:39:46,425 INFO  [Log] 		Click on Categories clickTab 
+2020-10-14 17:39:47,722 INFO  [Log] [STEP 12] 
+2020-10-14 17:39:47,796 INFO  [Log] 		Click on New clickNewBtn 
+2020-10-14 17:39:53,748 INFO  [Log] [STEP 13 - 14] 
+2020-10-14 17:39:53,790 INFO  [Log] 		Enter data for the jform[title] field: I. Lasch 
+2020-10-14 17:39:54,010 INFO  [Log] 		Click on Published createNewBannersCategories 
+2020-10-14 17:39:54,198 INFO  [Log] 		Click on Published createNewBannersCategories 
+2020-10-14 17:39:54,371 INFO  [Log] 		Click on Save & Close createNewBannersCategories 
+2020-10-14 17:39:55,686 INFO  [Log] [STEP 15
+A message : 'Category successfully saved' shows and new category is created 
+2020-10-14 17:40:05,803 INFO  [Log] [STEP 16] 
+2020-10-14 17:40:05,877 INFO  [Log] 		Click on Components clickTab 
+2020-10-14 17:40:06,081 INFO  [Log] 		Click on Banners clickTab 
+2020-10-14 17:40:07,264 INFO  [Log] [STEP 17] 
+2020-10-14 17:40:07,323 INFO  [Log] 		Click on New clickNewBtn 
+2020-10-14 17:40:08,844 INFO  [Log] [STEP 18 - 21] 
+2020-10-14 17:40:08,884 INFO  [Log] 		Enter data for the jform[name] field: 1+Louise E. Anna 
+2020-10-14 17:40:09,118 INFO  [Log] 		Click on Sample Data-Banners createNewBannersBanners 
+2020-10-14 17:40:09,352 INFO  [Log] 		Click on I. Lasch createNewBannersBanners 
+2020-10-14 17:40:09,537 INFO  [Log] 		Click on Banner Details createNewBannersBanners 
+2020-10-14 17:40:09,743 INFO  [Log] 		Click on - No client - createNewBannersBanners 
+2020-10-14 17:40:09,979 INFO  [Log] 		Click on - No client - createNewBannersBanners 
+2020-10-14 17:40:10,149 INFO  [Log] 		Click on Save & Close createNewBannersBanners 
+2020-10-14 17:40:11,418 INFO  [Log] [STEP 22
+A message : 'Banner successfully saved' shows and 'Edit Banner' page displays 
+2020-10-14 17:40:21,540 INFO  [Log] [STEP 23] 
+2020-10-14 17:40:21,649 INFO  [Log] 		Click on Components clickTab 
+2020-10-14 17:40:21,871 INFO  [Log] 		Click on Banners clickTab 
+2020-10-14 17:40:22,914 INFO  [Log] [STEP 24] 
+2020-10-14 17:40:22,984 INFO  [Log] 		Click on 1+Louise E. Anna clickBannersBanners 
+2020-10-14 17:40:24,572 INFO  [Log] [STEP 25] 
+2020-10-14 17:40:24,572 INFO  [Log] 	Create new random name 
+2020-10-14 17:40:24,601 INFO  [Log] 		Enter data for the jform[name] field: Ben Down 
+2020-10-14 17:40:35,168 INFO  [Log] -----------------------Close browser------------------------
+
+ 

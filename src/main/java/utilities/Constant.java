@@ -10,6 +10,8 @@ public class Constant {
     public static final int TIME_OUT_SHORT = 10;
     public static final List<String> ARTICLE_CATEGORY = Arrays.asList("Sample Data-Articles","- Joomla!");
     public static final List<String> CONTACT_CATEGORY = Arrays.asList("Sample Data-Contact","- Park Site (en-GB)");
+    public static final List<String> BANNERS_BANNERS_CATEGORY = Arrays.asList("Sample Data-Banners","Uncategorised");
+
 
 
     //Status
@@ -19,6 +21,9 @@ public class Constant {
 
     public static final String SAVED_ARTICLE_MESSAGE = "Article saved.";
     public static final String SAVED_CONTACT_MESSAGE = "Contact saved.";
+    public static final String SAVED_BANNERS_CLIENTS_MESSAGE = "Client saved.";
+    public static final String SAVED_BANNERS_CATEGORIES_MESSAGE = "Category saved.";
+    public static final String SAVED_BANNERS_BANNERS_MESSAGE = "Banner saved.";
 
     public static final String FEATURED_MESSAGE ="1 article featured.";
     public static final String UN_FEATURED_MESSAGE ="1 article unfeatured.";
