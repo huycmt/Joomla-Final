@@ -4,11 +4,11 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageobject.ArticleManagerPage;
-import pageobject.NewArticlePage;
+import page.object.ArticleManagerPage;
+import page.object.NewArticlePage;
 
 import static helpers.DataHelper.*;
-import static pageobject.BasePage.Tab.*;
+import static page.object.BasePage.Tab.*;
 import static utilities.Log.*;
 import static utilities.Constant.*;
 

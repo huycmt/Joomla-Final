@@ -1,4 +1,4 @@
-package pageobject;
+package page.object;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -48,6 +48,9 @@ public class BasePage {
     private WebElement bannersTab(){return  getDriver().findElement(By.xpath(String.format(_tabLevel2,"Components","Banners")));}
     private WebElement bannersClientsTab(){ return getDriver().findElement(By.xpath(String.format(_sideTab,"Clients")));}
     private WebElement bannersCategoriesTab(){return getDriver().findElement(By.xpath(String.format(_sideTab,"Categories")));}
+    private WebElement categoriesTab(){return getDriver().findElement(By.xpath(String.format(_tabLevel2,"Content","Categories")));}
+    private WebElement webLinksTab(){return getDriver().findElement(By.xpath(String.format(_tabLevel2,"Components","Web Links")));}
+
     public void clickTab(Tab tab) {
         switch (tab) {
             case CONTENT:
@@ -70,6 +73,12 @@ public class BasePage {
                 break;
             case BANNERS_CATEGORIES:
                 clickElement(bannersCategoriesTab());
+                break;
+            case CATEGORIES:
+                clickElement(categoriesTab());
+                break;
+            case WEB_LINKS:
+                clickElement(webLinksTab());
                 break;
         }
     }
@@ -138,6 +147,8 @@ public class BasePage {
         CONTACTS,
         BANNERS,
         BANNERS_CLIENTS,
-        BANNERS_CATEGORIES
+        BANNERS_CATEGORIES,
+        CATEGORIES,
+        WEB_LINKS
     }
 }

@@ -7,7 +7,10 @@
             <classes>
 <!--                <class name="testcases.ArticleTest"></class>-->
 <!--                <class name="testcases.ContactsTest"></class>-->
-                <class name="testcases.BannersBannersTest"></class>
+<!--                <class name="testcases.BannersBannersTest"></class>-->
+<!--                <class name="testcases.BannersClientsTest"></class>-->
+<!--                <class name="testcases.CategoriesTest"></class>      -->
+                <class name="testcases.WebLinksTest"></class>
 
             </classes>
         </parameter>

@@ -22,11 +22,17 @@ public class Constant {
     public static final String SAVED_ARTICLE_MESSAGE = "Article saved.";
     public static final String SAVED_CONTACT_MESSAGE = "Contact saved.";
     public static final String SAVED_BANNERS_CLIENTS_MESSAGE = "Client saved.";
-    public static final String SAVED_BANNERS_CATEGORIES_MESSAGE = "Category saved.";
+    public static final String SAVED_CATEGORIES_MESSAGE = "Category saved.";
+    public static final String CATEGORY_PUBLISHED_MESSAGE = "1 category published.";
+    public static final String WEB_LINKS_PUBLISHED_MESSAGE = "1 web link successfully published.";
     public static final String SAVED_BANNERS_BANNERS_MESSAGE = "Banner saved.";
+    public static final String CLIENT_ARCHIVED_MESSAGE ="1 client archived.";
+    public static final String SAVED_WEB_LINKS_MESSAGE ="Web link successfully saved";
 
     public static final String FEATURED_MESSAGE ="1 article featured.";
     public static final String UN_FEATURED_MESSAGE ="1 article unfeatured.";
+
+    public static final String BANNERS_CLIENTS_HELP_URL ="https://help.joomla.org/proxy?keyref=Help39:Components_Banners_Clients_Edit&lang=en";
 
     public static final String AUTHOR = "Huy";
 }

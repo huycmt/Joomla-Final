@@ -8,22 +8,36 @@ public class DataHelper {
     static Faker faker = new Faker();
 
     public static String email() {
-        info("\tCreate new random email");
-        return faker.internet().emailAddress();
+        String email =  faker.internet().emailAddress().replace("'","");;
+        info("\tCreate new random email: "+email);
+        return email;
     }
     public static String title(){
-        info("\tCreate new random title");
-        return faker.job().title();
+        String title =  faker.book().title().replace("'","");
+        info("\tCreate new random title: "+title);
+        return title;
     }
 
     public static String articleText() {
-        info("\tCreate new random article text");
-        return faker.harryPotter().quote();
+        String articleText = faker.harryPotter().quote();
+        info("\tCreate new random article text: "+articleText);
+        return articleText;
     }
 
     public static String name(){
-        info("\tCreate new random name");
-        return faker.funnyName().name();
+        String name = faker.funnyName().name().replace("'","");;
+        info("\tCreate new random name: "+name);
+        return name;
+    }
+    public static String word(){
+        String name = faker.lorem().word().replace("'","");;
+        info("\tCreate new random word: "+name);
+        return name;
+    }
+    public static String url(){
+        String name = faker.internet().url().replace("'","");;
+        info("\tCreate new random url: "+name);
+        return name;
     }
 
     public static String pid() {

@@ -56,6 +56,12 @@ public class DriverHelper {
             driver = null;
         }
     }
+    public static void switchWindow(){
+        String winHandleBefore = driver.getWindowHandle();
+        for(String winHandle : driver.getWindowHandles()){
+            driver.switchTo().window(winHandle);
+        }
+    }
 
     public enum browserType {
         CHROME, FIREFOX, EDGE
