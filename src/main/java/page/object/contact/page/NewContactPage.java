@@ -1,6 +1,8 @@
-package page.object;
+package page.object.contact.page;
 
-public class NewContactPage extends NewPage {
+import page.object.common.page.NewCommonPage;
+
+public class NewContactPage extends NewCommonPage {
 
     //Methods
     public void createNewContact(String name, String category, String status) {
@@ -11,7 +13,6 @@ public class NewContactPage extends NewPage {
 
         clickSaveAndCloseBtn();
     }
-
 
 
 }

@@ -4,29 +4,35 @@ import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import page.object.NewWebLinksPage;
-import page.object.WebLinksManagerPage;
+import page.object.LoginPage;
+import page.object.weblink.page.NewWebLinksPage;
+import page.object.weblink.page.WebLinksManagerPage;
 
-import static helpers.DataHelper.*;
-import static page.object.BasePage.Tab.*;
-import static utilities.Constant.*;
+import static helpers.DataHelper.randomString;
+import static helpers.DataHelper.url;
+import static page.object.BasePage.Tab.COMPONENTS;
+import static page.object.BasePage.Tab.WEB_LINKS;
+import static utilities.Constant.PASSWORD;
+import static utilities.Constant.PUBLISHED;
+import static utilities.Constant.SAVED_WEB_LINKS_MESSAGE;
+import static utilities.Constant.UNPUBLISHED;
+import static utilities.Constant.USERNAME;
+import static utilities.Constant.WEB_LINKS_PUBLISHED_MESSAGE;
 import static utilities.Log.info;
+import static utilities.Log.startLog;
 
 public class WebLinksTest extends BaseTest {
     WebLinksManagerPage webLinksManagerPage = new WebLinksManagerPage();
-    NewWebLinksPage  newWebLinksPage = new NewWebLinksPage();
-    String title = title();
-    String title2 = title();
-    String alias = word();
-    String alias2 = word();
+    NewWebLinksPage newWebLinksPage = new NewWebLinksPage();
+    LoginPage loginPage = new LoginPage();
     String url = url();
 
-
-
     @BeforeMethod(description = "User can create new web link with valid information")
-    public void TO_JOOMLA_WEBLINKS_001(){
+    public void TO_JOOMLA_WEBLINKS_001() {
+        startLog("TO_JOOMLA_WEBLINKS_001");
+
         info("[STEP 2 - 4]");
-        webLinksManagerPage.login(USERNAME,PASSWORD);
+        loginPage.login(USERNAME, PASSWORD);
 
         info("[STEP 5]");
         webLinksManagerPage.clickTab(COMPONENTS);
@@ -34,56 +40,65 @@ public class WebLinksTest extends BaseTest {
 
         info("[STEP 6]");
         webLinksManagerPage.clickNewBtn();
-
     }
+
     @Test(testName = "TO_JOOMLA_WEBLINKS_003", description = "Verify user can publish an unpublished web link")
-    public void TC_JOOMLA_WEBLINKS_003(){
+    public void TC_JOOMLA_WEBLINKS_003() {
+        startLog("TO_JOOMLA_WEBLINKS_003");
+
+        String title = randomString();
+        String alias = randomString();
 
         info("[STEP 7 - 10]");
-        newWebLinksPage.createNewWebLinks(title,alias,url,"Uncategorised",UNPUBLISHED);
+        newWebLinksPage.createNewWebLinks(title, alias, url, "Uncategorised", UNPUBLISHED);
 
         info("[STEP 11]\nVerify the web link is saved successfully");
-        Assert.assertEquals(webLinksManagerPage.getMessage(),SAVED_WEB_LINKS_MESSAGE,"Message displayed incorrectly");
+        Assert.assertEquals(webLinksManagerPage.getMessage(), SAVED_WEB_LINKS_MESSAGE, "Message displayed incorrectly");
 
-        webLinksManagerPage.selectSortItem();
-        Assert.assertTrue(webLinksManagerPage.isWebLinksDisplayed(title,alias),"Web links are not displayed");
+        webLinksManagerPage.sortByIdDescending();
+        Assert.assertTrue(webLinksManagerPage.isWebLinksDisplayed(title, alias), "Web links are not displayed");
 
         info("[STEP 12]");
-        webLinksManagerPage.clickWebLinksCheckBox(title,alias);
+        webLinksManagerPage.clickWebLinksCheckBox(title, alias);
 
         info("[STEP 13]");
         webLinksManagerPage.clickPublishBtn();
 
         info("[STEP 14]\nVerify the web link is published successfully");
-        Assert.assertEquals(webLinksManagerPage.getMessage(),WEB_LINKS_PUBLISHED_MESSAGE,"Message displayed incorrectly");
+        Assert.assertEquals(webLinksManagerPage.getMessage(), WEB_LINKS_PUBLISHED_MESSAGE, "Message displayed incorrectly");
 
-        webLinksManagerPage.selectSortItem();
-        Assert.assertTrue(webLinksManagerPage.isAttributeDisplayedCorrectly(title,alias),"Web links are not displayed");
+        webLinksManagerPage.sortByIdDescending();
+        Assert.assertTrue(webLinksManagerPage.isIconDisplayedAsPublished(), "Web links are not displayed");
     }
+
     @Test(testName = "TO_JOOMLA_WEBLINKS_010", description = "Verify user can search for weblinks using the filter dropdown lists")
-    public void TC_JOOMLA_WEBLINKS_010(){
+    public void TC_JOOMLA_WEBLINKS_010() {
+        startLog("TO_JOOMLA_WEBLINKS_010");
+
+        String title = randomString();
+        String alias = randomString();
 
         info("[STEP 7 - 10]");
-        newWebLinksPage.createNewWebLinks(title2,alias2,url,"Uncategorised",UNPUBLISHED);
+        newWebLinksPage.createNewWebLinks(title, alias, url, "Uncategorised", UNPUBLISHED);
 
         info("[STEP 11]\nVerify the web link is saved successfully");
-        Assert.assertEquals(webLinksManagerPage.getMessage(),SAVED_WEB_LINKS_MESSAGE,"Message displayed incorrectly");
+        Assert.assertEquals(webLinksManagerPage.getMessage(), SAVED_WEB_LINKS_MESSAGE, "Message displayed incorrectly");
 
-        webLinksManagerPage.selectSortItem();
-        Assert.assertTrue(webLinksManagerPage.isWebLinksDisplayed(title2,alias2),"Web links are not displayed");
+        webLinksManagerPage.sortByIdDescending();
+        Assert.assertTrue(webLinksManagerPage.isWebLinksDisplayed(title, alias), "Web links are not displayed");
         info("[STEP 12]");
         webLinksManagerPage.clickSearchToolsBtn();
 
         info("[STEP 13]");
-        webLinksManagerPage.clickCategoryItemInSearchTool("Uncategorised");
+        webLinksManagerPage.selectCategoryInSearchTool("Uncategorised");
 
         info("[STEP 14]");
-        webLinksManagerPage.clickStatusItemInSearchTool2(PUBLISHED);
+        webLinksManagerPage.selectStatusInSearchTool2(PUBLISHED);
 
         info("[STEP 15]\nVerify the property of displayed weblinks are matched with the selected criteria from the filter dropdown lists");
-        Assert.assertTrue(webLinksManagerPage.isCategoriesDisplayedCorrectly(title2,alias2,"Uncategorised"),"Categories displays incorrectly");
-        Assert.assertTrue(webLinksManagerPage.isAttributeDisplayedCorrectly(title2,alias2),"Attribute displayed incorrectly");
+        Assert.assertTrue(webLinksManagerPage.isCategoriesDisplayedCorrectly("Uncategorised"), "Categories displays incorrectly");
+        Assert.assertTrue(webLinksManagerPage.isIconDisplayedAsPublished(), "Attribute displayed incorrectly");
     }
 
-    }
+}
 

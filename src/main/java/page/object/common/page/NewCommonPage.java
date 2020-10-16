@@ -1,11 +1,13 @@
-package page.object;
+package page.object.common.page;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
+import page.object.BasePage;
+
 import static helpers.DriverHelper.getDriver;
 
-public class NewPage extends BasePage{
+public class NewCommonPage extends BasePage {
     //Locators
     private By _titleTb = By.cssSelector("input#jform_title");
     private By _nameTb = By.cssSelector("input#jform_name");
@@ -27,26 +29,50 @@ public class NewPage extends BasePage{
     private WebElement titleTb() {
         return getDriver().findElement(_titleTb);
     }
-    private WebElement nameTb(){return getDriver().findElement(_nameTb);}
 
-    private WebElement statusArrowDown1(){return getDriver().findElement(_statusArrowDown1);}
-    private WebElement statusItem1(String item){return getDriver().findElement(By.xpath(String.format(_statusItem1,item)));}
+    private WebElement nameTb() {
+        return getDriver().findElement(_nameTb);
+    }
 
-    private WebElement statusArrowDown2(){return getDriver().findElement(_statusArrowDown2);}
-    private WebElement statusItem2(String item){return getDriver().findElement(By.xpath(String.format(_statusItem2,item)));}
+    private WebElement statusArrowDown1() {
+        return getDriver().findElement(_statusArrowDown1);
+    }
 
-    private WebElement categoriesArrowDown(){return getDriver().findElement(_categoryArrowDown);}
-    private WebElement categoriesItem(String item){return getDriver().findElement(By.xpath(String.format(_categoryItem,item)));}
+    private WebElement statusItem1(String item) {
+        return getDriver().findElement(By.xpath(String.format(_statusItem1, item)));
+    }
 
-    private WebElement saveAndCloseBtn(){return getDriver().findElement(_saveAndCloseBtn);}
-    private WebElement saveAndNewBtn(){return getDriver().findElement(_saveAndNewBtn);}
+    private WebElement statusArrowDown2() {
+        return getDriver().findElement(_statusArrowDown2);
+    }
+
+    private WebElement statusItem2(String item) {
+        return getDriver().findElement(By.xpath(String.format(_statusItem2, item)));
+    }
+
+    private WebElement categoriesArrowDown() {
+        return getDriver().findElement(_categoryArrowDown);
+    }
+
+    private WebElement categoriesItem(String item) {
+        return getDriver().findElement(By.xpath(String.format(_categoryItem, item)));
+    }
+
+    private WebElement saveAndCloseBtn() {
+        return getDriver().findElement(_saveAndCloseBtn);
+    }
+
+    private WebElement saveAndNewBtn() {
+        return getDriver().findElement(_saveAndNewBtn);
+    }
 
     //Methods
-    public void enterTitle(String title){
-        enterData(titleTb(),title);
+    public void enterTitle(String title) {
+        enterData(titleTb(), title);
     }
-    public void enterName(String name){
-        enterData(nameTb(),name);
+
+    public void enterName(String name) {
+        enterData(nameTb(), name);
     }
 
     public void selectStatusItem1(String item) {
@@ -63,10 +89,12 @@ public class NewPage extends BasePage{
         clickElement(categoriesArrowDown());
         clickElement(categoriesItem(item));
     }
-    public void clickSaveAndCloseBtn(){
+
+    public void clickSaveAndCloseBtn() {
         clickElement(saveAndCloseBtn());
     }
-    public void clickSaveAndNewBtn(){
+
+    public void clickSaveAndNewBtn() {
         clickElement(saveAndNewBtn());
     }
 }
